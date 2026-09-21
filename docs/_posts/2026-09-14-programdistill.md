@@ -7,7 +7,7 @@ author: "Jeonghye Kim"
 reading_time: 9
 tags: ["Coding Agents", "Reference-Guided SWE", "Web Applications", "Synthetic Tasks", "Benchmark"]
 description: "A benchmark and synthetic task-generation framework that turns working web applications into replay-verifiable SWE tasks and evaluates whether coding agents can recover missing behavior from a live reference."
-paper_local: "/static/papers/ProgramDistill_arxiv.pdf"
+arxiv_url: "https://arxiv.org/pdf/2609.18805"
 version_local_assets: true
 explorer_manifest: "/figures/programdistill/explorer/cases.json"
 authors:

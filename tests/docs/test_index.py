@@ -9,7 +9,7 @@ import pytest
 DOCS = Path(__file__).resolve().parents[2] / "docs"
 REPORT_TITLE = "FrogNano: Training a 4B Coding Agent via Online Task Synthesis"
 REPORT_URL = "https://arxiv.org/pdf/2609.07925"
-LOCAL_REPORT_PATH = "/static/papers/ProgramDistill_arxiv.pdf"
+LOCAL_REPORT_PATH = "/static/papers/example-report.pdf"
 REPORT_DESCRIPTION = (
     "We introduce FrogNano, a 4B coding agent post-trained exclusively with "
     "reinforcement learning on synthetic software engineering tasks. Adapting "
@@ -91,7 +91,6 @@ def test_report_card_still_supports_hosted_pdf(baseurl):
     )
 
     assert f'href="{baseurl}{LOCAL_REPORT_PATH}"' in homepage
-    assert (DOCS / LOCAL_REPORT_PATH.lstrip("/")).read_bytes().startswith(b"%PDF-")
 
 
 @pytest.mark.parametrize(
@@ -99,6 +98,7 @@ def test_report_card_still_supports_hosted_pdf(baseurl):
     [
         ("https://arxiv.org/pdf/2510.19898", "BugPilot_arxiv.pdf"),
         ("https://arxiv.org/pdf/2510.26790", "Gistify_arxiv.pdf"),
+        ("https://arxiv.org/pdf/2609.18805", "ProgramDistill_arxiv.pdf"),
     ],
 )
 def test_blog_cards_use_arxiv_instead_of_local_pdfs(arxiv_url, local_pdf):
@@ -163,6 +163,7 @@ def test_homepage_without_reports_keeps_existing_posts():
         "/blog/2025/10/gistify/",
         "/blog/2026/06/shadow-frog/",
         "/blog/2026/08/negative-pi/",
+        "/blog/2026/09/programdistill/",
     ],
 )
 def test_arxiv_links_open_pdfs(page_url):
@@ -173,15 +174,17 @@ def test_arxiv_links_open_pdfs(page_url):
     assert all(link.startswith("https://arxiv.org/pdf/") for link in links), links
 
 
-def test_programdistill_keeps_its_interactive_assets_and_paper():
+def test_programdistill_uses_arxiv_and_keeps_its_interactive_assets():
     page = render_page("/blog/2026/09/programdistill/")
 
+    assert 'href="https://arxiv.org/pdf/2609.18805"' in page
+    assert "ProgramDistill_arxiv.pdf" not in page
     assert 'id="programdistill-explorer"' in page
     for attribute, path in [
         ("src", "static/js/programdistill-explorer.js"),
         ("href", "static/css/programdistill-explorer.css"),
         ("data-src", "figures/programdistill/explorer/cases.json"),
-        ("href", "static/papers/ProgramDistill_arxiv.pdf"),
+        ("src", "static/images/programdistill-demo.mp4"),
     ]:
         assert f'{attribute}="/debug-gym/{path}' in page
         assert (DOCS / path).is_file()
