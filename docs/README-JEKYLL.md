@@ -73,7 +73,8 @@ The entry appears in the homepage feed in reverse date order, after any entries
 marked `always_top: true`. Set `draft: true` to hide a report.
 
 Once the report is available on arXiv, update the entry's `link` to its PDF URL.
-Remove the redundant hosted PDF after updating all site references to it.
+Retain the hosted PDF at its original path if its URL has been shared publicly,
+so tweets and other external links continue to work.
 
 ### Creating a New Project Page
 
@@ -167,7 +168,7 @@ and inline citations, so they open the PDF directly.
 
 - Use `arxiv_url` for arXiv links or `paper_url` for other external paper links.
 - To host a PDF locally, drop it in `docs/static/papers/` and reference it with `paper_local: "/static/papers/<file>.pdf"`.
-- Once an arXiv version is available, remove `paper_local` and the redundant PDF after updating any other references.
+- Once an arXiv version is available, replace `paper_local` with `arxiv_url`. Retain the hosted PDF if its URL has been shared publicly, even though the site's paper buttons now use arXiv.
 - Set `paper_url: "#"` to show a disabled "Paper link coming soon" button; omit all paper-link fields to hide it.
 
 ### Team data (optional)

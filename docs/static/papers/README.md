@@ -1,8 +1,12 @@
 # Paper Uploads
 
-Use this folder for papers that do not yet have a public arXiv version. Once one is
-available, switch the site's links to `https://arxiv.org/pdf/<paper-id>` and remove
-the redundant PDF after updating all references.
+Use this folder for papers that do not yet have a public arXiv version, and for
+copies whose URLs have already been shared publicly. Once a paper is on arXiv,
+switch the site's links to `https://arxiv.org/pdf/<paper-id>`, but retain the hosted
+PDF at its original path if tweets or other external links depend on it.
+
+`ProgramDistill_arxiv.pdf` is retained for existing shared links. The homepage
+and blog link to `https://arxiv.org/pdf/2609.18805` instead.
 
 For blog posts, use `paper_local: "/static/papers/your-report.pdf"` in the post's front matter.
 When the paper is on arXiv, replace `paper_local` with

@@ -98,7 +98,6 @@ def test_report_card_still_supports_hosted_pdf(baseurl):
     [
         ("https://arxiv.org/pdf/2510.19898", "BugPilot_arxiv.pdf"),
         ("https://arxiv.org/pdf/2510.26790", "Gistify_arxiv.pdf"),
-        ("https://arxiv.org/pdf/2609.18805", "ProgramDistill_arxiv.pdf"),
     ],
 )
 def test_blog_cards_use_arxiv_instead_of_local_pdfs(arxiv_url, local_pdf):
@@ -188,6 +187,16 @@ def test_programdistill_uses_arxiv_and_keeps_its_interactive_assets():
     ]:
         assert f'{attribute}="/debug-gym/{path}' in page
         assert (DOCS / path).is_file()
+
+
+def test_programdistill_preserves_the_shared_pdf_url():
+    homepage = render_page()
+
+    assert 'href="https://arxiv.org/pdf/2609.18805"' in homepage
+    assert "ProgramDistill_arxiv.pdf" not in homepage
+    pdf = DOCS / "static/papers/ProgramDistill_arxiv.pdf"
+    assert pdf.is_file()
+    assert pdf.read_bytes().startswith(b"%PDF-")
 
 
 def test_homepage_contact_section_uses_the_team_address():
