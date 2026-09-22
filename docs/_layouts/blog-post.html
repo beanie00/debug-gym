@@ -10,7 +10,9 @@ layout: default
 <!-- Blog Hero -->
 <section class="blog-hero">
   <div class="container is-max-desktop has-text-centered">
+    {% unless page.hero_label == false %}
     <div class="blog-hero__label">{{ page.hero_label | default: 'Team Insight' }}</div>
+    {% endunless %}
     <h1 class="blog-hero__title">{{ page.title }}</h1>
 
     {% assign author_display = page.author %}

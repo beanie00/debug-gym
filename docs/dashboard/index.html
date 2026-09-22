@@ -1,0 +1,55 @@
+---
+layout: blog-post
+title: "ProgramDistill Leaderboard"
+hero_label: false
+description: "ProgramDistill turns working web apps into coding tasks and evaluates agents on restoring missing features using a browser-based reference."
+permalink: /blog/2026/09/programdistill/dashboard/
+---
+<link rel="stylesheet" href="{{ '/static/css/programdistill-explorer.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/static/css/programdistill-dashboard.css' | relative_url }}?v=about-first-20260922">
+<div class="pd-dashboard-page">
+  <a class="pd-back-link" href="{{ '/blog/2026/09/programdistill/' | relative_url }}">&larr; Read the ProgramDistill article</a>
+  <figure class="pdd-hero-reel" data-pd-comparison-hero>
+    <figcaption class="pdd-challenge">
+      <span class="pdd-challenge-intro">Coding agents, here&rsquo;s your challenge:</span>
+      <strong class="pdd-challenge-title"><span>Try the App.</span> <span>Learn How It Works.</span> <span>Reproduce It in Your Own Code.</span></strong>
+    </figcaption>
+    <div class="pdd-hero-media">
+      <video controls playsinline preload="metadata" width="1920" height="700"
+           aria-label="W&B, TeamChat, and Jira: reference apps and GPT-6 Astra restored apps"
+           aria-description="Edited screenshot replay with aligned actions, not a live screen recording. Scores are full-reconstruction workflow success rates."
+           poster="{{ '/figures/programdistill/comparisons/wandb.jpg' | relative_url }}?v=workflow-scores-tinted-20260922">
+      <source src="{{ '/figures/programdistill/comparisons/combined.mp4' | relative_url }}?v=workflow-scores-tinted-20260922" type="video/mp4">
+      <a href="{{ '/figures/programdistill/comparisons/combined.mp4' | relative_url }}?v=workflow-scores-tinted-20260922">Watch the combined MP4</a>
+      </video>
+    </div>
+  </figure>
+  <section class="pd-explorer pd-dashboard" data-pd-dashboard data-src="{{ '/data/programdistill/dashboard/index.json' | relative_url }}" data-leaderboard-src="{{ '/figures/programdistill/leaderboard.json' | relative_url }}" data-curated-src="{{ '/figures/programdistill/explorer/cases.json' | relative_url }}" data-mining-media-src="{{ '/figures/programdistill/mining/catalog.json' | relative_url }}" data-mining-media-base="{{ site.programdistill_mining_media_base | escape }}" data-agent-replays-src="{{ '/figures/programdistill/trajectories/index.json' | relative_url }}" data-application-sources-src="{{ '/figures/programdistill/applications.json' | relative_url }}" aria-label="ProgramDistill benchmark explorer">
+    <div class="pd-notice" data-pdd-notice role="status">
+      <p class="pd-notice-message" data-pdd-message>Loading the collection...</p>
+      <button class="pd-button pd-button-secondary" type="button" data-pdd-retry hidden>Retry loading data</button>
+      <noscript><p>Enable JavaScript to browse the interactive dashboard. The <a href="{{ '/blog/2026/09/programdistill/' | relative_url }}">article</a> explains the pipeline without it.</p></noscript>
+    </div>
+    <div data-pdd-content hidden>
+      <div class="pd-tabs" role="tablist" aria-label="Dashboard stages">
+        <button type="button" class="pd-tab" role="tab" data-pdd-tab="patching" aria-selected="true">Leaderboard</button>
+        <button type="button" class="pd-tab" role="tab" data-pdd-tab="runs" aria-selected="false" tabindex="-1">Agent trajectories</button>
+        <button type="button" class="pd-tab" role="tab" data-pdd-tab="mining" aria-selected="false" tabindex="-1">Feature Discovery (mining)</button>
+        <button type="button" class="pd-tab" role="tab" data-pdd-tab="crafting" aria-selected="false" tabindex="-1">Taskgen (Crafting)</button>
+      </div>
+      <p class="pd-description pdd-stage-intro" id="pdd-stage-intro" data-pdd-intro hidden></p>
+      <div class="pdd-controls" data-pdd-controls hidden>
+        <label class="pdd-field pdd-app-picker"><span class="pd-label">Choose an app</span><select class="pd-select" data-pdd-app></select></label>
+        <div class="pdd-overview" data-pdd-overview></div>
+      </div>
+      <section class="pd-panel pdd-panel" data-pdd-panel role="tabpanel" tabindex="0"></section>
+    </div>
+    <p class="pd-sr-only" data-pdd-live role="status" aria-live="polite"></p>
+  </section>
+</div>
+<script src="{{ '/static/js/programdistill-comparisons.js' | relative_url }}?v=split-hero-20260922" defer></script>
+<script src="{{ '/static/js/programdistill-explorer.js' | relative_url }}?v=media-publication-20260922" defer></script>
+<script src="{{ '/static/js/programdistill-charts.js' | relative_url }}?v=depth-width-20260922" defer></script>
+<script src="{{ '/static/js/programdistill-replays.js' | relative_url }}?v=trajectories-only-20260922" defer></script>
+<script src="{{ '/static/js/programdistill-leaderboard.js' | relative_url }}?v=depth-width-20260922" defer></script>
+<script src="{{ '/static/js/programdistill-dashboard.js' | relative_url }}?v=media-publication-20260922" defer></script>

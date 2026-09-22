@@ -80,7 +80,7 @@ ProgramDistill automates this process with the **mine-craft-patch** pipeline, or
 
 Choose one of the three examples below and follow the **mine-craft-patch** pipeline from mined behaviors to masks and saved repair runs. The explorer shows recorded examples rather than launching new agent runs. Each application is repository-based, with its GitHub source linked below the example list.
 
-<p class="pd-full-dashboard-cta"><button class="pd-full-dashboard-link" data-pd-dashboard-soon="programdistill-explorer" type="button" aria-haspopup="dialog">Explore all applications in the full dashboard (Coming Soon)</button></p>
+<p class="pd-full-dashboard-cta"><a class="pd-full-dashboard-link" href="{{ '/blog/2026/09/programdistill/dashboard/' | relative_url }}"><span>Explore all applications in the full dashboard</span><span class="pd-full-dashboard-arrow" aria-hidden="true">&rarr;</span></a></p>
 
 {% include programdistill-explorer.html %}
 

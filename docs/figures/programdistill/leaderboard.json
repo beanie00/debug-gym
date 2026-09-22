@@ -1,0 +1,1109 @@
+{
+  "version": 1,
+  "partial": {
+    "applications": 26,
+    "tasks": 300,
+    "models": [
+      {
+        "id": "capi-gpt-6-astra",
+        "label": "GPT-6 Astra",
+        "provider": "OpenAI",
+        "complete": 0.8433333333333333,
+        "chain": 0.9019920633333334,
+        "passed": 253,
+        "evaluated": 300,
+        "cost": 33.99348579,
+        "costed": 300,
+        "steps": 229.21,
+        "paperScope": {
+          "logic_only": "92.9",
+          "logic_and_ui": "76.9",
+          "gap": "16.0"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.9285714285714286,
+            "passed": 130,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.76875,
+            "passed": 123,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 1.0,
+            "chain": 1.0,
+            "passed": 50,
+            "evaluated": 50,
+            "cost": 8.7092914,
+            "costed": 50,
+            "steps": 126.18
+          },
+          {
+            "depth": 2,
+            "complete": 0.9555555555555556,
+            "chain": 0.9555555555555556,
+            "passed": 43,
+            "evaluated": 45,
+            "cost": 15.456099,
+            "costed": 45,
+            "steps": 164
+          },
+          {
+            "depth": 3,
+            "complete": 0.9111111111111111,
+            "chain": 0.9407407333333334,
+            "passed": 41,
+            "evaluated": 45,
+            "cost": 20.527632755555555,
+            "costed": 45,
+            "steps": 194.6888888888889
+          },
+          {
+            "depth": 4,
+            "complete": 0.8,
+            "chain": 0.81875,
+            "passed": 32,
+            "evaluated": 40,
+            "cost": 34.215402575,
+            "costed": 40,
+            "steps": 247.225
+          },
+          {
+            "depth": 5,
+            "complete": 0.8857142857142857,
+            "chain": 0.9085714285714286,
+            "passed": 31,
+            "evaluated": 35,
+            "cost": 43.812138028571425,
+            "costed": 35,
+            "steps": 275.6857142857143
+          },
+          {
+            "depth": 6,
+            "complete": 0.7,
+            "chain": 0.8666666666666667,
+            "passed": 21,
+            "evaluated": 30,
+            "cost": 55.74375233333333,
+            "costed": 30,
+            "steps": 302.8
+          },
+          {
+            "depth": 7,
+            "complete": 0.6333333333333333,
+            "chain": 0.8238095333333334,
+            "passed": 19,
+            "evaluated": 30,
+            "cost": 53.73944693333333,
+            "costed": 30,
+            "steps": 297.7
+          },
+          {
+            "depth": 8,
+            "complete": 0.64,
+            "chain": 0.8,
+            "passed": 16,
+            "evaluated": 25,
+            "cost": 78.27105304,
+            "costed": 25,
+            "steps": 350.4
+          }
+        ]
+      },
+      {
+        "id": "capi-claude-opus-5",
+        "label": "Claude Opus 5",
+        "provider": "Anthropic",
+        "complete": 0.6866666666666668,
+        "chain": 0.7521507866666667,
+        "passed": 206,
+        "evaluated": 300,
+        "cost": 28.85671351864407,
+        "costed": 295,
+        "steps": 205.84,
+        "paperScope": {
+          "logic_only": "80.0",
+          "logic_and_ui": "58.8",
+          "gap": "21.2"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.8,
+            "passed": 112,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.5875,
+            "passed": 94,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 0.96,
+            "chain": 0.96,
+            "passed": 48,
+            "evaluated": 50,
+            "cost": 4.87509384,
+            "costed": 50,
+            "steps": 102.68
+          },
+          {
+            "depth": 2,
+            "complete": 0.9333333333333332,
+            "chain": 0.9333333333333332,
+            "passed": 42,
+            "evaluated": 45,
+            "cost": 19.718041544444443,
+            "costed": 45,
+            "steps": 175.46666666666667
+          },
+          {
+            "depth": 3,
+            "complete": 0.7333333333333333,
+            "chain": 0.7851851777777779,
+            "passed": 33,
+            "evaluated": 45,
+            "cost": 21.50000628409091,
+            "costed": 44,
+            "steps": 189.6
+          },
+          {
+            "depth": 4,
+            "complete": 0.575,
+            "chain": 0.65625,
+            "passed": 23,
+            "evaluated": 40,
+            "cost": 43.473821012820515,
+            "costed": 39,
+            "steps": 248.9
+          },
+          {
+            "depth": 5,
+            "complete": 0.5714285714285715,
+            "chain": 0.68,
+            "passed": 20,
+            "evaluated": 35,
+            "cost": 34.301986691176474,
+            "costed": 34,
+            "steps": 236.4857142857143
+          },
+          {
+            "depth": 6,
+            "complete": 0.6666666666666667,
+            "chain": 0.7444444666666666,
+            "passed": 20,
+            "evaluated": 30,
+            "cost": 41.3714885,
+            "costed": 28,
+            "steps": 236.46666666666667
+          },
+          {
+            "depth": 7,
+            "complete": 0.4,
+            "chain": 0.5476189666666667,
+            "passed": 12,
+            "evaluated": 30,
+            "cost": 39.05394465,
+            "costed": 30,
+            "steps": 253.33333333333334
+          },
+          {
+            "depth": 8,
+            "complete": 0.32,
+            "chain": 0.46,
+            "passed": 8,
+            "evaluated": 25,
+            "cost": 49.75588262,
+            "costed": 25,
+            "steps": 290.52
+          }
+        ]
+      },
+      {
+        "id": "capi-gpt-5.6-sol",
+        "label": "GPT-5.6 Sol",
+        "provider": "OpenAI",
+        "complete": 0.6066666666666667,
+        "chain": 0.6815277733333334,
+        "passed": 182,
+        "evaluated": 300,
+        "cost": 16.006062886597938,
+        "costed": 291,
+        "steps": 193.46333333333334,
+        "paperScope": {
+          "logic_only": "76.4",
+          "logic_and_ui": "46.9",
+          "gap": "29.6"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.7642857142857143,
+            "passed": 107,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.46875,
+            "passed": 75,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 0.92,
+            "chain": 0.92,
+            "passed": 46,
+            "evaluated": 50,
+            "cost": 5.025149458333334,
+            "costed": 48,
+            "steps": 122.78
+          },
+          {
+            "depth": 2,
+            "complete": 0.8888888888888888,
+            "chain": 0.9111111111111111,
+            "passed": 40,
+            "evaluated": 45,
+            "cost": 8.269133104651162,
+            "costed": 43,
+            "steps": 162.37777777777777
+          },
+          {
+            "depth": 3,
+            "complete": 0.6222222222222222,
+            "chain": 0.7185184888888889,
+            "passed": 28,
+            "evaluated": 45,
+            "cost": 15.507605954545454,
+            "costed": 44,
+            "steps": 188.64444444444445
+          },
+          {
+            "depth": 4,
+            "complete": 0.575,
+            "chain": 0.625,
+            "passed": 23,
+            "evaluated": 40,
+            "cost": 19.719543144736843,
+            "costed": 38,
+            "steps": 216.275
+          },
+          {
+            "depth": 5,
+            "complete": 0.4,
+            "chain": 0.5428571428571428,
+            "passed": 14,
+            "evaluated": 35,
+            "cost": 19.35799579411765,
+            "costed": 34,
+            "steps": 222
+          },
+          {
+            "depth": 6,
+            "complete": 0.33333333333333337,
+            "chain": 0.4833334,
+            "passed": 10,
+            "evaluated": 30,
+            "cost": 18.987385983333336,
+            "costed": 30,
+            "steps": 225.16666666666666
+          },
+          {
+            "depth": 7,
+            "complete": 0.43333333333333335,
+            "chain": 0.5333332666666667,
+            "passed": 13,
+            "evaluated": 30,
+            "cost": 21.760997603448274,
+            "costed": 29,
+            "steps": 221.03333333333333
+          },
+          {
+            "depth": 8,
+            "complete": 0.32,
+            "chain": 0.425,
+            "passed": 8,
+            "evaluated": 25,
+            "cost": 30.817789360000003,
+            "costed": 25,
+            "steps": 251.88
+          }
+        ]
+      },
+      {
+        "id": "capi-grok-4.6",
+        "label": "Grok 4.6",
+        "provider": "xAI",
+        "complete": 0.48333333333333334,
+        "chain": 0.5710595266666667,
+        "passed": 145,
+        "evaluated": 300,
+        "cost": 8.830722979999999,
+        "costed": 300,
+        "steps": 160.87666666666667,
+        "paperScope": {
+          "logic_only": "64.3",
+          "logic_and_ui": "34.4",
+          "gap": "29.9"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.6428571428571429,
+            "passed": 90,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.34375,
+            "passed": 55,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 0.88,
+            "chain": 0.88,
+            "passed": 44,
+            "evaluated": 50,
+            "cost": 3.28640512,
+            "costed": 50,
+            "steps": 103.88
+          },
+          {
+            "depth": 2,
+            "complete": 0.6888888888888889,
+            "chain": 0.7555555555555555,
+            "passed": 31,
+            "evaluated": 45,
+            "cost": 5.753435644444445,
+            "costed": 45,
+            "steps": 136.77777777777777
+          },
+          {
+            "depth": 3,
+            "complete": 0.4888888888888889,
+            "chain": 0.6000000222222223,
+            "passed": 22,
+            "evaluated": 45,
+            "cost": 7.502921155555555,
+            "costed": 45,
+            "steps": 155.22222222222223
+          },
+          {
+            "depth": 4,
+            "complete": 0.375,
+            "chain": 0.48125,
+            "passed": 15,
+            "evaluated": 40,
+            "cost": 10.229821999999999,
+            "costed": 40,
+            "steps": 176.475
+          },
+          {
+            "depth": 5,
+            "complete": 0.34285714285714286,
+            "chain": 0.4228571428571428,
+            "passed": 12,
+            "evaluated": 35,
+            "cost": 10.691085542857143,
+            "costed": 35,
+            "steps": 181.37142857142857
+          },
+          {
+            "depth": 6,
+            "complete": 0.3,
+            "chain": 0.3833334,
+            "passed": 9,
+            "evaluated": 30,
+            "cost": 11.902861066666667,
+            "costed": 30,
+            "steps": 183.26666666666668
+          },
+          {
+            "depth": 7,
+            "complete": 0.33333333333333337,
+            "chain": 0.47142850000000003,
+            "passed": 10,
+            "evaluated": 30,
+            "cost": 12.700198066666665,
+            "costed": 30,
+            "steps": 197.5
+          },
+          {
+            "depth": 8,
+            "complete": 0.08,
+            "chain": 0.265,
+            "passed": 2,
+            "evaluated": 25,
+            "cost": 14.675517359999999,
+            "costed": 25,
+            "steps": 203.96
+          }
+        ]
+      },
+      {
+        "id": "capi-claude-sonnet-5",
+        "label": "Claude Sonnet 5",
+        "provider": "Anthropic",
+        "complete": 0.4733333333333334,
+        "chain": 0.5748055566666666,
+        "passed": 142,
+        "evaluated": 300,
+        "cost": 13.116233022666666,
+        "costed": 300,
+        "steps": 220.91,
+        "paperScope": {
+          "logic_only": "65.0",
+          "logic_and_ui": "31.9",
+          "gap": "33.1"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.65,
+            "passed": 91,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.31875,
+            "passed": 51,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 0.8,
+            "chain": 0.8,
+            "passed": 40,
+            "evaluated": 50,
+            "cost": 3.8883109559999998,
+            "costed": 50,
+            "steps": 133.16
+          },
+          {
+            "depth": 2,
+            "complete": 0.6222222222222222,
+            "chain": 0.7333333333333333,
+            "passed": 28,
+            "evaluated": 45,
+            "cost": 6.206564417777778,
+            "costed": 45,
+            "steps": 170.86666666666667
+          },
+          {
+            "depth": 3,
+            "complete": 0.4444444444444444,
+            "chain": 0.5407407333333333,
+            "passed": 20,
+            "evaluated": 45,
+            "cost": 11.544009248888889,
+            "costed": 45,
+            "steps": 217.22222222222223
+          },
+          {
+            "depth": 4,
+            "complete": 0.35,
+            "chain": 0.525,
+            "passed": 14,
+            "evaluated": 40,
+            "cost": 14.963672294999999,
+            "costed": 40,
+            "steps": 243.525
+          },
+          {
+            "depth": 5,
+            "complete": 0.37142857142857144,
+            "chain": 0.4971428571428571,
+            "passed": 13,
+            "evaluated": 35,
+            "cost": 17.461246125714283,
+            "costed": 35,
+            "steps": 266.57142857142856
+          },
+          {
+            "depth": 6,
+            "complete": 0.3,
+            "chain": 0.4111112,
+            "passed": 9,
+            "evaluated": 30,
+            "cost": 19.43812313333333,
+            "costed": 30,
+            "steps": 263.1333333333333
+          },
+          {
+            "depth": 7,
+            "complete": 0.43333333333333335,
+            "chain": 0.49999993333333337,
+            "passed": 13,
+            "evaluated": 30,
+            "cost": 19.919920593333334,
+            "costed": 30,
+            "steps": 274.7
+          },
+          {
+            "depth": 8,
+            "complete": 0.2,
+            "chain": 0.375,
+            "passed": 5,
+            "evaluated": 25,
+            "cost": 22.049869039999997,
+            "costed": 25,
+            "steps": 277.8
+          }
+        ]
+      },
+      {
+        "id": "capi-gpt-5.3-codex",
+        "label": "GPT-5.3 Codex",
+        "provider": "OpenAI",
+        "complete": 0.45666666666666667,
+        "chain": 0.5368730133333333,
+        "passed": 137,
+        "evaluated": 300,
+        "cost": 5.985562748666666,
+        "costed": 300,
+        "steps": 196.41,
+        "paperScope": {
+          "logic_only": "59.6",
+          "logic_and_ui": "33.4",
+          "gap": "26.2"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.6,
+            "passed": 84,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.33125,
+            "passed": 53,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 0.8,
+            "chain": 0.8,
+            "passed": 40,
+            "evaluated": 50,
+            "cost": 1.9509907479999997,
+            "costed": 50,
+            "steps": 121.8
+          },
+          {
+            "depth": 2,
+            "complete": 0.6222222222222222,
+            "chain": 0.7,
+            "passed": 28,
+            "evaluated": 45,
+            "cost": 4.695890492222222,
+            "costed": 45,
+            "steps": 186.3111111111111
+          },
+          {
+            "depth": 3,
+            "complete": 0.5333333333333333,
+            "chain": 0.6444444,
+            "passed": 24,
+            "evaluated": 45,
+            "cost": 5.630413592222222,
+            "costed": 45,
+            "steps": 196.7111111111111
+          },
+          {
+            "depth": 4,
+            "complete": 0.325,
+            "chain": 0.39375,
+            "passed": 13,
+            "evaluated": 40,
+            "cost": 6.203342136249999,
+            "costed": 40,
+            "steps": 205.8
+          },
+          {
+            "depth": 5,
+            "complete": 0.3142857142857143,
+            "chain": 0.45142857142857146,
+            "passed": 11,
+            "evaluated": 35,
+            "cost": 7.461865250000001,
+            "costed": 35,
+            "steps": 222
+          },
+          {
+            "depth": 6,
+            "complete": 0.3,
+            "chain": 0.3944445333333333,
+            "passed": 9,
+            "evaluated": 30,
+            "cost": 7.944253204999999,
+            "costed": 30,
+            "steps": 224.06666666666666
+          },
+          {
+            "depth": 7,
+            "complete": 0.2,
+            "chain": 0.3142856666666667,
+            "passed": 6,
+            "evaluated": 30,
+            "cost": 8.769659173333334,
+            "costed": 30,
+            "steps": 233.3
+          },
+          {
+            "depth": 8,
+            "complete": 0.24,
+            "chain": 0.31,
+            "passed": 6,
+            "evaluated": 25,
+            "cost": 8.908770514,
+            "costed": 25,
+            "steps": 234.96
+          }
+        ]
+      },
+      {
+        "id": "capi-gemini-3.7-flash",
+        "label": "Gemini 3.7 Flash",
+        "provider": "Google",
+        "complete": 0.45333333333333337,
+        "chain": 0.53170238,
+        "passed": 136,
+        "evaluated": 300,
+        "cost": 3.8876580765,
+        "costed": 300,
+        "steps": 206.27333333333334,
+        "paperScope": {
+          "logic_only": "61.4",
+          "logic_and_ui": "31.2",
+          "gap": "30.2"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.6142857142857143,
+            "passed": 86,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.3125,
+            "passed": 50,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 0.84,
+            "chain": 0.84,
+            "passed": 42,
+            "evaluated": 50,
+            "cost": 1.962996378,
+            "costed": 50,
+            "steps": 162.9
+          },
+          {
+            "depth": 2,
+            "complete": 0.6888888888888889,
+            "chain": 0.7555555555555555,
+            "passed": 31,
+            "evaluated": 45,
+            "cost": 2.835505215,
+            "costed": 45,
+            "steps": 190.04444444444445
+          },
+          {
+            "depth": 3,
+            "complete": 0.4666666666666666,
+            "chain": 0.533333311111111,
+            "passed": 21,
+            "evaluated": 45,
+            "cost": 3.622753723333333,
+            "costed": 45,
+            "steps": 200.22222222222223
+          },
+          {
+            "depth": 4,
+            "complete": 0.4,
+            "chain": 0.5,
+            "passed": 16,
+            "evaluated": 40,
+            "cost": 4.0162891275,
+            "costed": 40,
+            "steps": 213.725
+          },
+          {
+            "depth": 5,
+            "complete": 0.3142857142857143,
+            "chain": 0.4620408285714286,
+            "passed": 11,
+            "evaluated": 35,
+            "cost": 4.346709715714286,
+            "costed": 35,
+            "steps": 214.85714285714286
+          },
+          {
+            "depth": 6,
+            "complete": 0.2,
+            "chain": 0.26666676666666667,
+            "passed": 6,
+            "evaluated": 30,
+            "cost": 5.215271670000001,
+            "costed": 30,
+            "steps": 240.3
+          },
+          {
+            "depth": 7,
+            "complete": 0.16666666666666669,
+            "chain": 0.2904761,
+            "passed": 5,
+            "evaluated": 30,
+            "cost": 5.306800955,
+            "costed": 30,
+            "steps": 236.73333333333332
+          },
+          {
+            "depth": 8,
+            "complete": 0.16,
+            "chain": 0.265,
+            "passed": 4,
+            "evaluated": 25,
+            "cost": 5.963094717000001,
+            "costed": 25,
+            "steps": 231.8
+          }
+        ]
+      },
+      {
+        "id": "capi-gemini-3.6-flash",
+        "label": "Gemini 3.6 Flash",
+        "provider": "Google",
+        "complete": 0.2966666666666667,
+        "chain": 0.3962539666666666,
+        "passed": 89,
+        "evaluated": 300,
+        "cost": 5.6355529643939395,
+        "costed": 297,
+        "steps": 178.35333333333332,
+        "paperScope": {
+          "logic_only": "37.9",
+          "logic_and_ui": "22.5",
+          "gap": "15.4"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.37857142857142856,
+            "passed": 53,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.225,
+            "passed": 36,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 0.62,
+            "chain": 0.62,
+            "passed": 31,
+            "evaluated": 50,
+            "cost": 2.394427803,
+            "costed": 50,
+            "steps": 132.12
+          },
+          {
+            "depth": 2,
+            "complete": 0.5333333333333333,
+            "chain": 0.6222222222222222,
+            "passed": 24,
+            "evaluated": 45,
+            "cost": 3.5802336933333336,
+            "costed": 45,
+            "steps": 160.6
+          },
+          {
+            "depth": 3,
+            "complete": 0.3111111111111111,
+            "chain": 0.42962959999999994,
+            "passed": 14,
+            "evaluated": 45,
+            "cost": 4.640190143333333,
+            "costed": 45,
+            "steps": 171.2888888888889
+          },
+          {
+            "depth": 4,
+            "complete": 0.225,
+            "chain": 0.34375,
+            "passed": 9,
+            "evaluated": 40,
+            "cost": 5.894730398076923,
+            "costed": 39,
+            "steps": 177.05
+          },
+          {
+            "depth": 5,
+            "complete": 0.08571428571428572,
+            "chain": 0.26857142857142857,
+            "passed": 3,
+            "evaluated": 35,
+            "cost": 6.927477338571428,
+            "costed": 35,
+            "steps": 209.45714285714286
+          },
+          {
+            "depth": 6,
+            "complete": 0.13333333333333333,
+            "chain": 0.26666676666666667,
+            "passed": 4,
+            "evaluated": 30,
+            "cost": 7.1767449857142855,
+            "costed": 28,
+            "steps": 187.8
+          },
+          {
+            "depth": 7,
+            "complete": 0.1,
+            "chain": 0.2047618333333333,
+            "passed": 3,
+            "evaluated": 30,
+            "cost": 8.506484425,
+            "costed": 30,
+            "steps": 213.53333333333333
+          },
+          {
+            "depth": 8,
+            "complete": 0.04,
+            "chain": 0.13,
+            "passed": 1,
+            "evaluated": 25,
+            "cost": 10.224767316,
+            "costed": 25,
+            "steps": 220.48
+          }
+        ]
+      },
+      {
+        "id": "capi-gemini-3.1-pro-preview",
+        "label": "Gemini 3.1 Pro Preview",
+        "provider": "Google",
+        "complete": 0.22333333333333333,
+        "chain": 0.30506348666666666,
+        "passed": 67,
+        "evaluated": 300,
+        "cost": 4.616045431333333,
+        "costed": 300,
+        "steps": 159.57,
+        "paperScope": {
+          "logic_only": "31.1",
+          "logic_and_ui": "14.7",
+          "gap": "16.4"
+        },
+        "scopes": {
+          "logic_only": {
+            "complete": 0.30714285714285716,
+            "passed": 43,
+            "evaluated": 140
+          },
+          "logic_and_ui": {
+            "complete": 0.15,
+            "passed": 24,
+            "evaluated": 160
+          }
+        },
+        "depths": [
+          {
+            "depth": 1,
+            "complete": 0.7,
+            "chain": 0.7,
+            "passed": 35,
+            "evaluated": 50,
+            "cost": 1.982344788,
+            "costed": 50,
+            "steps": 107.16
+          },
+          {
+            "depth": 2,
+            "complete": 0.3111111111111111,
+            "chain": 0.43333333333333335,
+            "passed": 14,
+            "evaluated": 45,
+            "cost": 2.50062192,
+            "costed": 45,
+            "steps": 122.13333333333334
+          },
+          {
+            "depth": 3,
+            "complete": 0.15555555555555556,
+            "chain": 0.27407404444444444,
+            "passed": 7,
+            "evaluated": 45,
+            "cost": 4.0081350844444446,
+            "costed": 45,
+            "steps": 158.22222222222223
+          },
+          {
+            "depth": 4,
+            "complete": 0.1,
+            "chain": 0.1875,
+            "passed": 4,
+            "evaluated": 40,
+            "cost": 7.25956118,
+            "costed": 40,
+            "steps": 193.45
+          },
+          {
+            "depth": 5,
+            "complete": 0.02857142857142857,
+            "chain": 0.15428571428571428,
+            "passed": 1,
+            "evaluated": 35,
+            "cost": 5.748876662857143,
+            "costed": 35,
+            "steps": 190.02857142857144
+          },
+          {
+            "depth": 6,
+            "complete": 0.1,
+            "chain": 0.1666667,
+            "passed": 3,
+            "evaluated": 30,
+            "cost": 5.414751300000001,
+            "costed": 30,
+            "steps": 170.13333333333333
+          },
+          {
+            "depth": 7,
+            "complete": 0.06666666666666667,
+            "chain": 0.1428571,
+            "passed": 2,
+            "evaluated": 30,
+            "cost": 5.990237919999999,
+            "costed": 30,
+            "steps": 185.66666666666666
+          },
+          {
+            "depth": 8,
+            "complete": 0.04,
+            "chain": 0.1,
+            "passed": 1,
+            "evaluated": 25,
+            "cost": 6.362380712,
+            "costed": 25,
+            "steps": 193.36
+          }
+        ]
+      }
+    ],
+    "reporting": {
+      "source": "user_instruction",
+      "status": "aggregate_reporting_override",
+      "task_mapping": "unresolved",
+      "scope_mapping": "logic_and_ui",
+      "raw_rewards_modified": false,
+      "model": "capi-gpt-6-astra",
+      "depth": 8,
+      "observed_perfect": 17,
+      "official_perfect": 16,
+      "count": 25,
+      "official_overall_perfect": 253,
+      "official_cumulative_perfect": 203,
+      "observed_cumulative_perfect": 204,
+      "aggregate_additivity": "official atomic 50 plus cumulative 203 equals overall 253",
+      "cumulative_policy": "The depth-eight one-pass adjustment also reduces cumulative perfect count by one.",
+      "chain_unchanged": true
+    }
+  },
+  "full": {
+    "applications": 12,
+    "individualTotal": 590,
+    "workflowTotal": 413,
+    "models": [
+      {
+        "id": "capi-gpt-6-astra",
+        "label": "GPT-6 Astra (max)",
+        "provider": "OpenAI",
+        "steps": 719.4,
+        "applications": 12,
+        "cost": 595.6296383333333,
+        "costed": 12,
+        "totalCost": 7147.555660000001,
+        "individual": 0.5898305084745763,
+        "individualPassed": 348,
+        "individualTotal": 590,
+        "workflow": 0.4915254237288136,
+        "workflowPassed": 203,
+        "workflowTotal": 413
+      },
+      {
+        "id": "capi-claude-opus-5",
+        "label": "Claude Opus 5 (max)",
+        "provider": "Anthropic",
+        "steps": 627.5,
+        "applications": 12,
+        "cost": 250.62035708333335,
+        "costed": 12,
+        "totalCost": 3007.444285,
+        "individual": 0.42033898305084744,
+        "individualPassed": 248,
+        "individualTotal": 590,
+        "workflow": 0.288135593220339,
+        "workflowPassed": 119,
+        "workflowTotal": 413
+      },
+      {
+        "id": "capi-gpt-5.6-sol",
+        "label": "GPT-5.6 Sol (max)",
+        "provider": "OpenAI",
+        "steps": 719.0,
+        "applications": 12,
+        "cost": 402.62541980833333,
+        "costed": 12,
+        "totalCost": 4831.5050377,
+        "individual": 0.3338983050847458,
+        "individualPassed": 197,
+        "individualTotal": 590,
+        "workflow": 0.2106537530266344,
+        "workflowPassed": 87,
+        "workflowTotal": 413
+      }
+    ]
+  },
+  "provenance": {
+    "partial": {
+      "source": "analysis/data/paper_tasks.jsonl",
+      "sha256": "96155f7caf61b09ed832d52445fb260c4cfc91f268dcb0bcbbffda224aa10440",
+      "aggregation": "analysis/repair_reporting.py",
+      "costs": "analysis/repair_costs.py",
+      "scopeTable": {
+        "source": "section/appendix.tex",
+        "table": "tab:mask-scope",
+        "sha256": "1b363367153db3c9bb234425be939cedb90e022e7f0aef5086a49785adb29b02",
+        "macroSource": "analysis/generated/repair-refresh-macros.tex",
+        "macroSha256": "1628cf3141fa9684c1e3892ee29ff3b672c3aaa13414c97c5f2a97c71180d419"
+      }
+    },
+    "full": {
+      "source": "analysis/generated/canonical-macros.tex",
+      "sha256": "321b57d2e2457d6dd1eb278990bbb5eadce32b918800a4f3fdbdb27d50a2d894",
+      "snapshot": "2026-09-13 11:28:09 UTC",
+      "costs": {
+        "source": "full-costs.json",
+        "sha256": "5e98d3c8402a59f9095f1beb028e0142b2bf0174ae0d15f889277773ba759931",
+        "selectionSha256": "3feac7606ee8c6aecdff8a70b2099e1a95c80a7105c90bb66b30630a64791690",
+        "runs": 36,
+        "method": "Uncached input, cached input, and output tokens times recorded model rates. All selected solver runs; excludes mining, evaluation, and other retries."
+      }
+    },
+    "costNote": "Mean USD expenditure among trajectories with recorded costs; not token list prices."
+  }
+}

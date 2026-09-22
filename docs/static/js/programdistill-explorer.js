@@ -886,6 +886,16 @@
     return box;
   }
 
+  function splitDiffFiles(diff) {
+    requireData(isText(diff) && diff.startsWith('diff --git '), 'recorded patch must begin with a Git file header');
+    return diff.split(/(?=^diff --git )/m).map((block) => {
+      const header = /^diff --git a\/([^\r\n]+?) b\/([^\r\n]+)(?:\r?\n|$)/.exec(block);
+      requireData(header, 'unrecognized Git file header');
+      const fileHeader = /^\+\+\+ b\/([^\r\n]+)/m.exec(block) || /^--- a\/([^\r\n]+)/m.exec(block);
+      return { path: fileHeader ? fileHeader[1] : header[2], diff: block };
+    });
+  }
+
   let codeBrowserId = 0;
 
   function codeBrowser(files, selectedPath, onSelect = () => {}) {
@@ -1273,18 +1283,6 @@
     const dialog = createDialog(root, prefix);
     initializeTraceExamples(root, prefix);
     initializeFigureZoom(root, prefix);
-    const dashboardSoon = document.querySelector(`[data-pd-dashboard-soon="${root.id}"]`);
-    if (dashboardSoon) {
-      dashboardSoon.addEventListener('click', () => {
-        dialog.open({
-          title: 'Full dashboard coming soon',
-          category: '',
-          body: element('p', 'pd-description', "We're getting it ready. Please check back soon!"),
-          trigger: dashboardSoon
-        });
-      });
-    }
-
     function builderState(item) {
       if (!builderStates.has(item.id)) builderStates.set(item.id, { removed: new Set(), selected: new Set(), combined: null });
       return builderStates.get(item.id);
@@ -1552,7 +1550,8 @@
   }
 
   window.ProgramDistillUI = Object.freeze({
-    element, button, status, stats, createDialog, createPlayer, createGraph, behaviorLabel, renderDiff, combineSelection,
+    element, button, status, stats, createDialog, createPlayer, createGraph, behaviorLabel, renderDiff,
+    splitDiffFiles, codeBrowser, combineSelection, assetURL,
     loadApplicationSources, createApplicationSource
   });
   document.querySelectorAll('[data-pd-explorer]').forEach(initialize);
