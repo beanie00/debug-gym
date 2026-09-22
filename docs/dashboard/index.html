@@ -24,7 +24,7 @@ permalink: /blog/2026/09/programdistill/dashboard/
       </video>
     </div>
   </figure>
-  <section class="pd-explorer pd-dashboard" data-pd-dashboard data-src="{{ '/data/programdistill/dashboard/index.json' | relative_url }}" data-leaderboard-src="{{ '/figures/programdistill/leaderboard.json' | relative_url }}" data-curated-src="{{ '/figures/programdistill/explorer/cases.json' | relative_url }}" data-mining-media-src="{{ '/figures/programdistill/mining/catalog.json' | relative_url }}" data-mining-media-base="{{ site.programdistill_mining_media_base | escape }}" data-agent-replays-src="{{ '/figures/programdistill/trajectories/index.json' | relative_url }}" data-application-sources-src="{{ '/figures/programdistill/applications.json' | relative_url }}" aria-label="ProgramDistill benchmark explorer">
+  <section class="pd-explorer pd-dashboard" data-pd-dashboard data-src="{{ '/data/programdistill/dashboard/index.json' | relative_url }}" data-leaderboard-src="{{ '/figures/programdistill/leaderboard.json' | relative_url }}" data-curated-src="{{ '/figures/programdistill/explorer/cases.json' | relative_url }}" data-mining-media-src="{{ '/figures/programdistill/mining/catalog.json' | relative_url }}" data-mining-media-base="{{ site.programdistill_mining_media_base | escape }}" data-patch-base="{{ site.programdistill_patch_base | escape }}" data-agent-replays-src="{{ '/figures/programdistill/trajectories/index.json' | relative_url }}" data-application-sources-src="{{ '/figures/programdistill/applications.json' | relative_url }}" aria-label="ProgramDistill benchmark explorer">
     <div class="pd-notice" data-pdd-notice role="status">
       <p class="pd-notice-message" data-pdd-message>Loading the collection...</p>
       <button class="pd-button pd-button-secondary" type="button" data-pdd-retry hidden>Retry loading data</button>
@@ -52,4 +52,4 @@ permalink: /blog/2026/09/programdistill/dashboard/
 <script src="{{ '/static/js/programdistill-charts.js' | relative_url }}?v=depth-width-20260922" defer></script>
 <script src="{{ '/static/js/programdistill-replays.js' | relative_url }}?v=trajectories-only-20260922" defer></script>
 <script src="{{ '/static/js/programdistill-leaderboard.js' | relative_url }}?v=depth-width-20260922" defer></script>
-<script src="{{ '/static/js/programdistill-dashboard.js' | relative_url }}?v=media-publication-20260922" defer></script>
+<script src="{{ '/static/js/programdistill-dashboard.js' | relative_url }}?v=patch-publication-20260922" defer></script>

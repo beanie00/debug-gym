@@ -4,7 +4,7 @@
   const root = document.querySelector('[data-pd-dashboard]');
   if (!root) return;
   const { element, button, status, stats, createDialog, createPlayer, behaviorLabel, splitDiffFiles, codeBrowser,
-    loadApplicationSources, createApplicationSource, assetURL: mediaURL } = window.ProgramDistillUI;
+    loadApplicationSources, createApplicationSource, assetURL: publishedAssetURL } = window.ProgramDistillUI;
   const { lineChart } = window.ProgramDistillCharts;
   const views = ['patching', 'runs', 'mining', 'crafting'];
   const find = (selector) => root.querySelector(selector);
@@ -263,7 +263,6 @@
     } else {
       let loaded = false;
       let loading = false;
-      const diffURL = assetURL(task.diff, base);
       const result = element('div');
       diffBody.append(result);
       async function loadDiff() {
@@ -271,9 +270,24 @@
         loading = true;
         result.replaceChildren(element('p', 'pd-note', 'Loading patch...'));
         try {
+          let diffURL = assetURL(task.diff, base);
+          const publicPatchBase = root.dataset.patchBase;
+          if (publicPatchBase) {
+            const localPatchBase = new URL('patches/', manifestURL);
+            const filename = diffURL.pathname.slice(localPatchBase.pathname.length);
+            requireData(diffURL.pathname.startsWith(localPatchBase.pathname) &&
+              /^[a-f0-9]{64}\.diff\.gz$/.test(filename) && !diffURL.search && !diffURL.hash,
+            'patch must identify a published content-addressed diff');
+            diffURL = new URL(publishedAssetURL(new URL(filename, publicPatchBase).href, base, publicPatchBase));
+          }
           let text = patchCache.get(diffURL.href);
           if (text === undefined) {
-            const response = await fetch(diffURL, { credentials: 'same-origin', mode: 'same-origin' });
+            const local = diffURL.origin === location.origin;
+            const response = await fetch(diffURL, {
+              credentials: local ? 'same-origin' : 'omit',
+              mode: local ? 'same-origin' : 'cors',
+              redirect: 'error'
+            });
             if (!response.ok) throw new Error(`Patch request returned HTTP ${response.status}.`);
             const bytes = new Uint8Array(await response.arrayBuffer());
             if (bytes[0] === 0x1f && bytes[1] === 0x8b) {
@@ -1056,7 +1070,7 @@
           const data = await getJSON(catalogURL);
           requireData(data.version === 1 && Array.isArray(data.apps), 'mining media catalog is incomplete');
           const publicMediaBase = root.dataset.miningMediaBase || null;
-          const resolveMedia = (path) => mediaURL(
+          const resolveMedia = (path) => publishedAssetURL(
             publicMediaBase ? new URL(path, publicMediaBase).href : path, catalogURL, publicMediaBase);
           const recordings = new Map();
           data.apps.forEach((app) => {
