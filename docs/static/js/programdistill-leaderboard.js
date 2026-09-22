@@ -88,6 +88,15 @@
     return graph;
   }
 
+  function createHarnessLink() {
+    const link = element('a', '', 'R2E-Gym');
+    link.href = 'https://github.com/R2E-Gym/R2E-Gym';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label', 'R2E-Gym source on GitHub (opens in a new tab)');
+    return link;
+  }
+
   function render(data, availableWidth = 640) {
     const root = element('div', 'pdd-leaderboard');
     for (const track of ['full', 'partial']) {
@@ -107,12 +116,7 @@
         ? `ProgramDistill-300 · ${group.tasks} tasks · ${group.applications} apps`
         : `${group.applications} apps · ${group.individualTotal} individual behaviors · ${group.workflowTotal} cumulative workflows`;
       const summary = element('p', 'pdd-track-population', `${population} (run with a modified `);
-      const harnessLink = element('a', '', 'R2E-Gym');
-      harnessLink.href = 'https://github.com/R2E-Gym/R2E-Gym';
-      harnessLink.target = '_blank';
-      harnessLink.rel = 'noopener noreferrer';
-      harnessLink.setAttribute('aria-label', 'R2E-Gym source on GitHub (opens in a new tab)');
-      summary.append(harnessLink, ' harness; details in the paper)');
+      summary.append(createHarnessLink(), ' harness by default; details in the paper)');
       label.append(title, summary);
       header.append(label);
       section.append(header);
@@ -188,6 +192,7 @@
             }
             row.append(cell);
           });
+          row.append(element('td', '', 'R2E-Gym'));
           body.append(row);
         });
         feedback.textContent = `${selected.length} models. Rank is based on ${partial ? 'complete repair' : 'cumulative workflow recovery'}.`;
@@ -205,6 +210,9 @@
         headers.set(key, { th, control, label });
         tr.append(th);
       });
+      const harnessHeader = element('th', 'pdd-harness-header', 'Harness');
+      harnessHeader.scope = 'col';
+      tr.append(harnessHeader);
       thead.append(tr);
       table.append(caption, thead, body);
       wrap.append(table);

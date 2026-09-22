@@ -461,6 +461,10 @@ body:has([data-pd-dashboard], [data-pd-comparisons]) .blog-hero__title {
   letter-spacing: .025em;
 }
 
+.pd-dashboard .pdd-ranking-table .pdd-harness-header {
+  text-transform: none;
+}
+
 .pd-dashboard .pdd-ranking-table tbody :is(td, th) {
   padding: 14px 12px;
   vertical-align: middle;
