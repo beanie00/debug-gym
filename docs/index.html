@@ -139,6 +139,7 @@ title: "MSR Montréal - Froggy Team"
         {% endif %}
         {% assign sort_key = post.date | date: "%Y%m%d%H%M%S" %}
         {% assign leaderboard_url = post.leaderboard_url | default: '' | strip %}
+        {% assign dataset_url = post.dataset_url | default: '' | strip %}
         {% capture entry_markup %}
           <div class="project-card">
             <div class="project-card__meta-row">
@@ -166,6 +167,12 @@ title: "MSR Montréal - Froggy Team"
               <a href="{{ leaderboard_url | relative_url | escape }}" class="button is-info">
                 <span class="icon"><i class="fas fa-trophy" aria-hidden="true"></i></span>
                 <span>Leaderboard</span>
+              </a>
+              {% endif %}
+              {% if dataset_url != '' %}
+              <a href="{{ dataset_url | relative_url | escape }}" target="_blank" rel="noopener noreferrer" class="button is-success">
+                <span class="icon"><i class="fas fa-database" aria-hidden="true"></i></span>
+                <span>Dataset</span>
               </a>
               {% endif %}
               {% if post.github_url %}

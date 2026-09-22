@@ -183,6 +183,15 @@ field to hide the button. A paper link is not required.
 Both reconstruction leaderboards show **Model**, then **Harness**, followed by
 the sortable performance metrics.
 
+**Dataset links:**
+
+Set `dataset_url` in a post's front matter to add a **Dataset** button to its
+homepage card and blog header. Pages using the `blog-post` layout, including
+`dashboard/index.html`, can set the same field to show it in their header without
+requiring a paper link. ProgramDistill uses
+`dataset_url: "https://huggingface.co/datasets/microsoft/ProgramDistill"`.
+The button opens in a new tab; omit the field to hide it.
+
 ### Team data (optional)
 
 The legacy Team page has been retired, and `_data/team.yml` has been removed. If you’d like blog posts (or other templates) to look up author metadata, you can recreate the file with entries like:
