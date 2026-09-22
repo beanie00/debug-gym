@@ -199,6 +199,78 @@ def test_programdistill_preserves_the_shared_pdf_url():
     assert pdf.read_bytes().startswith(b"%PDF-")
 
 
+@pytest.mark.parametrize("baseurl", ["", "/debug-gym", "/preview"])
+def test_programdistill_resource_buttons(baseurl):
+    post_path = "/blog/2026/09/programdistill/"
+    dashboard_path = post_path + "dashboard/"
+    homepage = render_page(baseurl=baseurl)
+    cards = homepage.split('<div class="project-card">')[1:]
+    card = next(card for card in cards if f'href="{baseurl}{post_path}"' in card)
+    post = render_page(post_path, baseurl=baseurl)
+    hero = post.split('<section class="blog-hero">', 1)[1].split("</section>", 1)[0]
+
+    for region in (card, hero):
+        buttons = [
+            anchor
+            for anchor in re.findall(r"<a\b[^>]*>.*?</a>", region, re.S)
+            if "<span>Leaderboard</span>" in anchor
+        ]
+        assert len(buttons) == 1
+        assert f'href="{baseurl}{dashboard_path}"' in buttons[0]
+        assert 'href="https://arxiv.org/pdf/2609.18805"' in region
+
+    assert "<span>Read Blog Post</span>" in card
+    assert "<span>Paper</span>" in card
+    assert "<span>View paper</span>" in hero
+    assert homepage.count("<span>Leaderboard</span>") == 1
+
+    dashboard = render_page(dashboard_path, baseurl=baseurl)
+    assert "data-pd-dashboard" in dashboard
+    dashboard_hero = dashboard.split('<section class="blog-hero">', 1)[1].split(
+        "</section>", 1
+    )[0]
+    for region in (card, hero, dashboard_hero):
+        buttons = [
+            anchor
+            for anchor in re.findall(r"<a\b[^>]*>.*?</a>", region, re.S)
+            if "<span>Dataset</span>" in anchor
+        ]
+        assert len(buttons) == 1
+        assert (
+            'href="https://huggingface.co/datasets/microsoft/ProgramDistill"'
+            in buttons[0]
+        )
+        assert 'target="_blank"' in buttons[0]
+        assert 'rel="noopener noreferrer"' in buttons[0]
+    assert homepage.count("<span>Dataset</span>") == 1
+
+
+@pytest.mark.parametrize(
+    "page_url",
+    ["/blog/2025/10/bug-pilot/", "/blog/2026/08/negative-pi/"],
+)
+def test_blog_headers_without_a_dataset_hide_the_button(page_url):
+    page = render_page(page_url)
+    hero = page.split('<section class="blog-hero">', 1)[1].split("</section>", 1)[0]
+
+    assert "<span>Dataset</span>" not in hero
+
+
+@pytest.mark.parametrize(
+    "page_url",
+    [
+        "/blog/2025/10/bug-pilot/",
+        "/blog/2026/08/negative-pi/",
+        "/blog/2026/09/programdistill/dashboard/",
+    ],
+)
+def test_blog_headers_without_a_leaderboard_link_are_unchanged(page_url):
+    page = render_page(page_url)
+    hero = page.split('<section class="blog-hero">', 1)[1].split("</section>", 1)[0]
+
+    assert "<span>Leaderboard</span>" not in hero
+
+
 def test_homepage_contact_section_uses_the_team_address():
     homepage = render_page()
     contact = re.search(

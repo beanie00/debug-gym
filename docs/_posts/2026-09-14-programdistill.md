@@ -8,6 +8,8 @@ reading_time: 9
 tags: ["Coding Agents", "Reference-Guided SWE", "Web Applications", "Synthetic Tasks", "Benchmark"]
 description: "A benchmark and synthetic task-generation framework that turns working web applications into replay-verifiable SWE tasks and evaluates whether coding agents can recover missing behavior from a live reference."
 arxiv_url: "https://arxiv.org/pdf/2609.18805"
+leaderboard_url: "/blog/2026/09/programdistill/dashboard/"
+dataset_url: "https://huggingface.co/datasets/microsoft/ProgramDistill"
 version_local_assets: true
 explorer_manifest: "/figures/programdistill/explorer/cases.json"
 authors:
@@ -80,7 +82,7 @@ ProgramDistill automates this process with the **mine-craft-patch** pipeline, or
 
 Choose one of the three examples below and follow the **mine-craft-patch** pipeline from mined behaviors to masks and saved repair runs. The explorer shows recorded examples rather than launching new agent runs. Each application is repository-based, with its GitHub source linked below the example list.
 
-<p class="pd-full-dashboard-cta"><button class="pd-full-dashboard-link" data-pd-dashboard-soon="programdistill-explorer" type="button" aria-haspopup="dialog">Explore all applications in the full dashboard (Coming Soon)</button></p>
+<p class="pd-full-dashboard-cta"><a class="pd-full-dashboard-link" href="{{ '/blog/2026/09/programdistill/dashboard/' | relative_url }}"><span>Explore all applications in the full dashboard</span><span class="pd-full-dashboard-arrow" aria-hidden="true">&rarr;</span></a></p>
 
 {% include programdistill-explorer.html %}
 

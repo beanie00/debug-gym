@@ -194,18 +194,36 @@
 }
 
 .pd-full-dashboard-link {
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid #cbd0fb;
+  border-radius: var(--radius-sm, 10px);
+  background: var(--color-background-accent, #edf1ff);
+  color: var(--color-primary-dark, #434ed1);
   font: inherit;
+  font-weight: 700;
   text-align: left;
+  text-decoration: none;
   cursor: pointer;
-  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .pd-full-dashboard-link:hover {
-  color: var(--color-primary-dark);
+  border-color: var(--color-primary, #525fe5);
+  background: #e2e6ff;
+  color: var(--color-primary-dark, #434ed1);
+  text-decoration: none;
+}
+
+.pd-full-dashboard-arrow {
+  flex-shrink: 0;
+  font-size: 1.35em;
+  line-height: 1;
 }
 
 .pd-full-dashboard-link:focus-visible {

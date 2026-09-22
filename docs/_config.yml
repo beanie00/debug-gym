@@ -3,6 +3,8 @@ title: "MSR Montréal Froggy Team"
 description: ""
 baseurl: "/debug-gym"
 url: "https://microsoft.github.io"
+programdistill_mining_media_base: "https://beanie00.github.io/programdistill-media/"
+programdistill_patch_base: "https://beanie00.github.io/programdistill-media/patches/"
 
 # Build settings
 markdown: kramdown
@@ -44,6 +46,8 @@ exclude:
   - .bundle
   - .sass-cache
   - _site
+  - figures/programdistill/mining/media
+  - data/programdistill/dashboard/patches
 
 # Plugins
 plugins:
