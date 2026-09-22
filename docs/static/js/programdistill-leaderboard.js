@@ -110,10 +110,10 @@
       section.append(header);
       if (partial) section.append(renderDepthChart(group, availableWidth));
       const columns = [
-        ['label', 'Model'], [primary, 'Binary score', percent],
+        ['label', 'Model'], [primary, partial ? 'Binary score' : 'Cumulative workflow success', percent],
         ['cost', partial ? 'Avg. cost / task' : 'Avg. cost / app', (value) => `$${value.toFixed(2)}`],
-        [partial ? 'chain' : 'individual', partial ? 'Chain score' : 'Atomic recovery', percent],
-        ['steps', 'Avg. steps', (value) => value.toFixed(1)]
+        [partial ? 'chain' : 'individual', partial ? 'Chain score' : 'Atomic behavior success', percent],
+        ['steps', partial ? 'Avg. steps / task' : 'Avg. steps / app', (value) => value.toFixed(1)]
       ];
       const wrap = element('div', 'pdd-table-scroll pdd-ranking-scroll');
       wrap.tabIndex = 0;
