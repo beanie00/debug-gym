@@ -103,9 +103,17 @@
       section.setAttribute('aria-labelledby', title.id);
       const header = element('div', 'pdd-track-heading');
       const label = element('div');
-      label.append(title, element('p', 'pdd-track-population', partial
+      const population = partial
         ? `ProgramDistill-300 · ${group.tasks} tasks · ${group.applications} apps`
-        : `${group.applications} apps · ${group.individualTotal} individual behaviors · ${group.workflowTotal} cumulative workflows`));
+        : `${group.applications} apps · ${group.individualTotal} individual behaviors · ${group.workflowTotal} cumulative workflows`;
+      const summary = element('p', 'pdd-track-population', `${population} (run with a modified `);
+      const harnessLink = element('a', '', 'R2E-Gym');
+      harnessLink.href = 'https://github.com/R2E-Gym/R2E-Gym';
+      harnessLink.target = '_blank';
+      harnessLink.rel = 'noopener noreferrer';
+      harnessLink.setAttribute('aria-label', 'R2E-Gym source on GitHub (opens in a new tab)');
+      summary.append(harnessLink, ' harness; details in the paper)');
+      label.append(title, summary);
       header.append(label);
       section.append(header);
       if (partial) section.append(renderDepthChart(group, availableWidth));
