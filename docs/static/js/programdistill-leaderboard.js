@@ -122,7 +122,8 @@
       section.append(header);
       if (partial) section.append(renderDepthChart(group, availableWidth));
       const columns = [
-        ['label', 'Model'], [primary, partial ? 'Binary score' : 'Cumulative workflow success', percent],
+        ['label', 'Model'], ['harness', 'Harness'],
+        [primary, partial ? 'Binary score' : 'Cumulative workflow success', percent],
         ['cost', partial ? 'Avg. cost / task' : 'Avg. cost / app', (value) => `$${value.toFixed(2)}`],
         [partial ? 'chain' : 'individual', partial ? 'Chain score' : 'Atomic behavior success', percent],
         ['steps', partial ? 'Avg. steps / task' : 'Avg. steps / app', (value) => value.toFixed(1)]
@@ -181,6 +182,8 @@
               cell.scope = 'row';
               cell.append(element('strong', 'pdd-model-name', model.label),
                 element('span', 'pdd-model-provider', model.provider));
+            } else if (key === 'harness') {
+              cell.textContent = 'R2E-Gym';
             } else {
               cell.textContent = format(model[key]);
               if (key === 'cost') cell.title =
@@ -192,7 +195,6 @@
             }
             row.append(cell);
           });
-          row.append(element('td', '', 'R2E-Gym'));
           body.append(row);
         });
         feedback.textContent = `${selected.length} models. Rank is based on ${partial ? 'complete repair' : 'cumulative workflow recovery'}.`;
@@ -200,6 +202,12 @@
       columns.forEach(([key, label]) => {
         const th = element('th');
         th.scope = 'col';
+        if (key === 'harness') {
+          th.classList.add('pdd-harness-header');
+          th.textContent = label;
+          tr.append(th);
+          return;
+        }
         const control = button('pdd-sort', label);
         control.addEventListener('click', () => {
           ascending = key === sortKey ? !ascending : ['label', 'cost', 'steps'].includes(key);
@@ -210,9 +218,6 @@
         headers.set(key, { th, control, label });
         tr.append(th);
       });
-      const harnessHeader = element('th', 'pdd-harness-header', 'Harness');
-      harnessHeader.scope = 'col';
-      tr.append(harnessHeader);
       thead.append(tr);
       table.append(caption, thead, body);
       wrap.append(table);

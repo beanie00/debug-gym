@@ -511,7 +511,7 @@ body:has([data-pd-dashboard], [data-pd-comparisons]) .blog-hero__title {
   font-size: 15px;
 }
 
-.pd-dashboard .pdd-ranking-table :is(th, td):nth-child(n+3) {
+.pd-dashboard .pdd-ranking-table :is(th, td):nth-child(n+4) {
   text-align: right;
 }
 

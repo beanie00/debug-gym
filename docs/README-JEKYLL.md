@@ -171,6 +171,18 @@ and inline citations, so they open the PDF directly.
 - Once an arXiv version is available, replace `paper_local` with `arxiv_url`. Retain the hosted PDF if its URL has been shared publicly, even though the site's paper buttons now use arXiv.
 - Set `paper_url: "#"` to show a disabled "Paper link coming soon" button; omit all paper-link fields to hide it.
 
+**Leaderboard links:**
+
+Add an optional `leaderboard_url` in a post's front matter to show a **Leaderboard**
+button on both its homepage card and blog header, alongside the existing paper
+links. For example, ProgramDistill uses
+`leaderboard_url: "/blog/2026/09/programdistill/dashboard/"`. Site-relative paths
+automatically include the site's `baseurl`; full external URLs also work. Omit the
+field to hide the button. A paper link is not required.
+
+Both reconstruction leaderboards show **Model**, then **Harness**, followed by
+the sortable performance metrics.
+
 ### Team data (optional)
 
 The legacy Team page has been retired, and `_data/team.yml` has been removed. If you’d like blog posts (or other templates) to look up author metadata, you can recreate the file with entries like:

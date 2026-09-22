@@ -8,6 +8,7 @@ reading_time: 9
 tags: ["Coding Agents", "Reference-Guided SWE", "Web Applications", "Synthetic Tasks", "Benchmark"]
 description: "A benchmark and synthetic task-generation framework that turns working web applications into replay-verifiable SWE tasks and evaluates whether coding agents can recover missing behavior from a live reference."
 arxiv_url: "https://arxiv.org/pdf/2609.18805"
+leaderboard_url: "/blog/2026/09/programdistill/dashboard/"
 version_local_assets: true
 explorer_manifest: "/figures/programdistill/explorer/cases.json"
 authors:
