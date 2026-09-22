@@ -59,7 +59,7 @@
 }
 
 .pd-dashboard .pdd-scope-breakdown {
-  margin-top: 24px;
+  margin-top: 56px;
 }
 
 .pd-dashboard .pdd-scope-breakdown .pdd-chart-title {
@@ -372,6 +372,10 @@ body:has([data-pd-dashboard], [data-pd-comparisons]) .blog-hero__title {
   margin: 4px 0 38px;
 }
 
+.pd-dashboard .pdd-leaderboard-partial {
+  padding-top: 16px;
+}
+
 .pd-dashboard .pdd-track-heading {
   display: flex;
   align-items: center;
@@ -415,11 +419,11 @@ body:has([data-pd-dashboard], [data-pd-comparisons]) .blog-hero__title {
 }
 
 .pd-dashboard .pdd-depth-chart [data-series] path {
-  stroke-width: 2.2;
+  stroke-width: 1.6;
 }
 
 .pd-dashboard .pdd-depth-chart .pdd-chart-swatch {
-  border-top-width: 2.2px;
+  border-top-width: 1.6px;
 }
 
 @media (max-width: 800px) {
